@@ -18,20 +18,18 @@ export const site = {
   ],
 } as const;
 
-export type SocialKey = 'github' | 'linkedin' | 'email' | 'source';
+export type SocialKey = 'github' | 'linkedin' | 'email';
 
 export const socials: Record<SocialKey, { label: string; href: string }> = {
   github: { label: 'GitHub', href: 'https://github.com/owais1724' },
   linkedin: { label: 'LinkedIn', href: 'https://www.linkedin.com/in/syed-owais-/' },
   email: { label: 'Email', href: 'mailto:syedowaismohi@gmail.com' },
-  source: { label: 'Design foundation', href: 'https://github.com/aitezazdev/Portfolio' },
 };
 
 export const socialList: Array<{ label: string; href: string }> = [
   socials.linkedin,
   socials.email,
   socials.github,
-  socials.source,
 ];
 
 export const navLinks = [

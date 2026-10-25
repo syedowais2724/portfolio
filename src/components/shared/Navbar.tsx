@@ -136,7 +136,7 @@ const NavbarBrand: React.FC<NavbarBrandProps> = ({ logoRef, handleLinkClick }) =
           <Copyright className="w-[18px] h-[18px]" />
         </div>
         <div className="relative ms-2 flex items-center whitespace-nowrap text-warm text-lg font-sans tracking-wide font-medium leading-none">
-          <span>owais</span>
+          <span>Owais</span>
           <span className="relative inline-flex items-center overflow-hidden transition-all duration-500 ease-in-expo w-[32px] group-hover:w-[86px]">
             <span className="transition-transform duration-500 ease-in-expo group-hover:-translate-x-full inline-block">
               dev
@@ -459,7 +459,7 @@ const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose, handle
             </div>
 
             <div className="flex gap-4 md:gap-6 justify-start flex-wrap">
-              {[socials.github, socials.source, socials.linkedin].map((s) => (
+              {[socials.github, socials.linkedin].map((s) => (
                 <Magnetic key={s.label} strength={0.3}>
                   <a
                     href={s.href}
