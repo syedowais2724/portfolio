@@ -1,62 +1,19 @@
 import { Metadata } from 'next';
+import { site } from './site';
 
 export const siteMetadata: Metadata = {
-  title: {
-    default: 'Aitezaz Sikandar - Full Stack Developer',
-    template: '%s | Aitezaz Sikandar',
-  },
-  description:
-    'Web developer specializing in React, Next.js, and MERN Stack development. Building fast, scalable, and user-focused web applications.',
-  keywords: [
-    'Aitezaz Sikandar',
-    'Web Developer',
-    'Frontend Developer',
-    'Full Stack Developer',
-    'Next.js',
-    'React',
-    'JavaScript',
-    'MERN Stack',
-    'Portfolio',
-  ],
-  authors: [
-    {
-      name: 'Aitezaz Sikandar Khan',
-    },
-  ],
-  creator: 'Aitezaz Sikandar',
-  metadataBase: new URL('https://aitezazdev.vercel.app'),
-  alternates: {
-    canonical: './',
-  },
-  icons: {
-    icon: '/logo.webp',
-  },
+  title: { default: 'Syed Owais — Software Engineer', template: '%s | Syed Owais' },
+  description: site.tagline,
+  authors: [{ name: site.name }],
+  creator: site.name,
+  metadataBase: new URL(site.url),
+  alternates: { canonical: './' },
+  icons: { icon: '/owais-mark.svg' },
   openGraph: {
-    title: 'Aitezaz Sikandar - Full Stack Developer',
-    description:
-      'Portfolio of Aitezaz Sikandar, Full Stack Developer specializing in MERN stack, Next.js, and polished web experiences.',
-    url: 'https://aitezazdev.vercel.app',
-    siteName: 'Aitezaz Sikandar Portfolio',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Aitezaz Sikandar - Full Stack Developer',
-      },
-    ],
-    type: 'website',
+    title: 'Syed Owais — Software that listens, thinks, and acts.',
+    description: site.tagline, url: site.url, siteName: 'Syed Owais Portfolio', type: 'website',
+    images: [{ url: '/work/double.svg', width: 1200, height: 750, alt: 'Syed Owais — Voice, AI & Full Stack' }],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Aitezaz Sikandar - Full Stack Developer',
-    description:
-      'Portfolio of Aitezaz Sikandar, Full Stack Developer specializing in MERN stack, Next.js, and polished web experiences.',
-    images: ['/og-image.png'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  twitter: { card: 'summary_large_image', title: 'Syed Owais — Software Engineer', description: site.tagline },
 };
 

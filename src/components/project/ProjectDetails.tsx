@@ -152,7 +152,7 @@ export default function ProjectDetails({ project }: { project: Project }) {
                 <div className="pd-figure-inner absolute inset-x-0 -top-[8%] h-[116%]" style={{ willChange: 'transform' }}>
                   <Image
                     src={project.images[0]}
-                    alt={`${project.title} preview`}
+                    alt={`${project.title} illustrative concept graphic, not a product screenshot`}
                     fill
                     sizes="(max-width: 768px) 100vw, 1200px"
                     priority
@@ -164,6 +164,7 @@ export default function ProjectDetails({ project }: { project: Project }) {
           </div>
         )}
 
+        <p className="mb-10 font-mono text-xs text-gray-soft">Illustrative project visual · Content based on my résumé. No customer data or private product screens.</p>
         <div className="flex flex-col md:grid md:grid-cols-12 gap-2 sm:gap-3 md:gap-8 mb-8 sm:mb-12 md:mb-20">
           <div className="md:col-span-4">
             <p className="font-mono text-xs uppercase tracking-widest text-accent md:text-warm-light">(Overview)</p>

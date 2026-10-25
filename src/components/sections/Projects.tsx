@@ -667,7 +667,7 @@ export default function ProjectsPage() {
         >
           <div
             ref={setInnerRef}
-            className="w-[420px] xl:w-[460px] rounded-2xl overflow-hidden shadow-2xl bg-surface-mid"
+            className="relative w-[420px] xl:w-[460px] rounded-2xl overflow-hidden shadow-2xl bg-surface-mid"
             style={{
               aspectRatio: '16 / 10',
               willChange: 'transform',
@@ -676,12 +676,12 @@ export default function ProjectsPage() {
           >
             <div
               ref={setImageContainerRef}
-              className="w-full h-full relative overflow-hidden"
+              className="absolute inset-0 overflow-hidden"
               style={{ willChange: 'transform', transform: 'scale(1.12)' }}
             >
               <div
                 ref={sliderReelRef}
-                className="w-full h-full relative"
+                className="absolute inset-0"
                 style={{ willChange: 'transform', transform: 'translateY(0%)' }}
               >
                 {projects.map((project, idx) => {
@@ -689,7 +689,7 @@ export default function ProjectsPage() {
                   return (
                     <div
                       key={project.id}
-                      className="w-full h-full absolute inset-0 overflow-hidden"
+                      className="w-full h-full absolute left-0 overflow-hidden"
                       style={{ top: `${idx * 100}%` }}
                     >
                       <Image

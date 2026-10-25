@@ -78,7 +78,7 @@ const StampBadge = ({ onClick }: { onClick: () => void }) => (
           style={{ fontSize: '15.5px', letterSpacing: '0.305em' }}
         >
           <textPath href="#stamp-circle">
-            AVAILABLE FOR WORK • LET&apos;S BUILD • 
+            VOICE • AI • FULL STACK • LET&apos;S BUILD •
           </textPath>
         </text>
       </svg>
@@ -280,13 +280,13 @@ const HomeBanner = () => {
                 data-hero-line
                 className="block font-display font-black uppercase text-hero tracking-tight"
               >
-                AITEZAZ
+                SYED
               </span>
               <span
                 data-hero-line
                 className="serif-accent block text-hero-sm leading-[0.85] md:ml-[14vw]"
               >
-                sikandar
+                owais
               </span>
             </span>
           </h1>
@@ -302,7 +302,8 @@ const HomeBanner = () => {
               ref={paragraphRef}
               className="text-warm font-sans text-base sm:text-lg md:text-xl leading-relaxed mb-8 md:mb-10 text-center mx-auto"
             >
-              Full-stack engineer building fast, scalable, and reliable web applications.
+              I build software that listens, thinks, and gets things done.
+              Full-stack products, voice systems, and AI agents.
             </p>
 
             <div ref={tickerRef} className="w-full flex justify-center">
@@ -324,7 +325,7 @@ const HomeBanner = () => {
               />
               <AnimatedButton
                 as="a"
-                href="/01_aitezaz_resume.pdf"
+                href="/owais_resume_v2.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 topText="RESUME"

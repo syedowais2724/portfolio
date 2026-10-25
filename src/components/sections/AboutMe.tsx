@@ -8,31 +8,46 @@ import FlowField from '@/components/canvas/FlowField';
 
 const CREDENTIALS = [
   {
-    year: '2026',
-    title: 'Software Engineer Intern - MERN Stack',
-    organization: 'e-strats, Islamabad',
+    year: 'Jul 2026 — Present',
+    title: 'Software Engineer',
+    organization: 'The Double · India',
+    stat: 'AI messaging channels, voice calling, Flutter iOS, connected agent actions, and knowledge graphs.',
     type: 'Industry',
   },
   {
-    year: '2026',
-    title: 'HEC National Skills Competency Test (NSCT)',
-    organization: 'HEC, PSEB & P@SHA',
-    stat: '95th Percentile, Top 5% nationwide',
-    type: 'Recognition',
+    year: 'Jan — Jun 2026',
+    title: 'SDE Intern',
+    organization: 'Ellipsonic Technologies · India',
+    stat: 'Multilingual voice AI agents with FastAPI, plus RBAC workflows and REST APIs.',
+    type: 'Industry',
   },
   {
-    year: '2024-25',
-    title: 'Web and Mobile App Development',
-    organization: 'Saylani Mass IT Training (SMIT), Peshawar',
-    stat: 'Full-Stack MERN, TypeScript, Next.js & Hybrid Apps',
-    type: 'Certification',
+    year: 'Jan — Jun 2026',
+    title: 'Web Developer Intern',
+    organization: 'Nano Stream Technologies · India',
+    stat: 'Responsive React interfaces, e-commerce flows, and OAuth authentication UI.',
+    type: 'Industry',
   },
   {
-    year: '2022-26',
-    title: 'BS Computer Science',
-    organization: 'University of Peshawar',
-    stat: '3.60 / 4.00 GPA',
+    year: 'Oct 2024 — Jan 2025',
+    title: 'ML Intern',
+    organization: 'IndiaMart',
+    stat: 'Object detection and product cropping for screenshot-based image search; approximately 80% detection accuracy.',
+    type: 'Industry',
+  },
+  {
+    year: '2022 — 2026',
+    title: 'B.E. AI & Machine Learning',
+    organization: 'BMS Institute of Technology & Management · Karnataka',
+    stat: 'CGPA 8.2 / 10.00',
     type: 'Education',
+  },
+  {
+    year: 'NPTEL Elite',
+    title: 'Learning beyond the code',
+    organization: 'IISc Bangalore · IIT Roorkee',
+    stat: 'Foundations of Deep Learning: Concepts and Applications; Leadership and Team Effectiveness.',
+    type: 'Certifications',
   },
 ];
 
@@ -43,8 +58,8 @@ const About = () => {
     { t: 'i?' },
   ];
   const descriptionText =
-    'I am a software engineer driven by a passion for building clean, intuitive, and reliable digital experiences.';
-  const aboutMeText = `I build web applications that bridge thoughtful frontend interfaces with robust backend systems. To me, software is more than code on a screen; it is about making technology feel effortless and genuinely useful to real people.\n\nMy journey began with a simple curiosity for how things work under the hood. Over time, that curiosity evolved into a genuine passion for fluid interface animations, reliable backend architecture, and building user journeys that feel effortless and alive.\n\nWhether I am polishing micro-interactions or engineering full-stack systems, my core focus remains unchanged: creating software that brings people joy, solves real problems, and leaves a lasting positive impact.`;
+    'I am a software engineer connecting full-stack products, real-time voice, and AI agents.';
+  const aboutMeText = `I am Syed Owais, a software engineer currently at The Double. I work across web, backend, and mobile: building the interfaces people see and the systems that make them work.\n\nMy work includes AI messaging channels, Python and LiveKit voice calling, SIP telephony, and a Flutter iOS app. I enjoy connecting the pieces into something people can actually use.\n\nI graduated in Artificial Intelligence and Machine Learning from BMSIT. My projects explore voice-first assistants, document-grounded answers, and role-based operational software.`;
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const tableRef = useRef<HTMLDivElement>(null);

@@ -1,35 +1,35 @@
 export const site = {
-  name: 'Aitezaz Sikandar',
-  firstName: 'Aitezaz',
-  lastName: 'Sikandar',
-  handle: 'aitezazdev',
-  brand: 'aitezaz.dev',
-  email: 'aitezazsikandar@gmail.com',
-  location: 'Pakistan',
-  timeZone: 'Asia/Karachi',
-  timeZoneLabel: 'PKT',
-  url: 'https://aitezazdev.vercel.app',
-  tagline: 'Full Stack Developer crafting fast, expressive web experiences.',
+  name: 'Syed Owais',
+  firstName: 'Syed',
+  lastName: 'Owais',
+  handle: 'owais1724',
+  brand: 'owais.dev',
+  email: 'syedowaismohi@gmail.com',
+  location: 'India',
+  timeZone: 'Asia/Kolkata',
+  timeZoneLabel: 'IST',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://owais2424.netlify.app',
+  tagline: 'Software engineer building full-stack products, voice systems, and AI agents.',
   roles: [
-    'Full Stack Developer',
-    'React & Next.js Engineer',
-    'MERN Stack Developer',
-    'Open to Work Worldwide',
+    'Software Engineer',
+    'Voice & AI Agent Systems',
+    'Full Stack & Mobile',
+    'Currently at The Double',
   ],
 } as const;
 
-export type SocialKey = 'github' | 'linkedin' | 'instagram' | 'source';
+export type SocialKey = 'github' | 'linkedin' | 'email' | 'source';
 
 export const socials: Record<SocialKey, { label: string; href: string }> = {
-  github: { label: 'GitHub', href: 'https://github.com/aitezazdev' },
-  linkedin: { label: 'Linkedin', href: 'https://linkedin.com/in/aitezaz-sikandar' },
-  instagram: { label: 'Instagram', href: 'https://instagram.com/ur_zaz' },
-  source: { label: 'Source Code', href: 'https://github.com/aitezazdev/Portfolio' },
+  github: { label: 'GitHub', href: 'https://github.com/owais1724' },
+  linkedin: { label: 'LinkedIn', href: 'https://www.linkedin.com/in/syed-owais-/' },
+  email: { label: 'Email', href: 'mailto:syedowaismohi@gmail.com' },
+  source: { label: 'Design foundation', href: 'https://github.com/aitezazdev/Portfolio' },
 };
 
 export const socialList: Array<{ label: string; href: string }> = [
   socials.linkedin,
-  socials.instagram,
+  socials.email,
   socials.github,
   socials.source,
 ];
@@ -37,7 +37,7 @@ export const socialList: Array<{ label: string; href: string }> = [
 export const navLinks = [
   { name: 'Home', href: '/#top', menuOnly: true },
   { name: 'About', href: '/#about' },
-  { name: 'Services', href: '/#services' },
+  { name: 'Expertise', href: '/#services' },
   { name: 'Work', href: '/#projects' },
   { name: 'Contact', href: '/#contact' },
 ] as const;

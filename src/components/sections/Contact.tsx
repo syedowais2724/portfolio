@@ -135,30 +135,13 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 20000);
-
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-        signal: controller.signal,
-      });
-      clearTimeout(timeoutId);
-      const data = await response.json();
-      if (response.ok && data.success) {
-        setSubmitStatus('success');
-        setSuccessMessage(data.message || 'Thank you! Your message has been sent successfully.');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setSubmitStatus('error');
-        if (data?.error) {
-          setErrors({ server: data.error });
-        }
-      }
+      const subject = encodeURIComponent(`Portfolio enquiry from ${formData.name}`);
+      const body = encodeURIComponent(`${formData.message}\n\nFrom: ${formData.name}\nReply to: ${formData.email}`);
+      window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
+      setSubmitStatus('success');
+      setSuccessMessage('Your email app should open with a draft. Review it and press Send there. Nothing has been sent by this website.');
     } catch {
-      clearTimeout(timeoutId);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -283,8 +266,8 @@ const Contact = () => {
                 className="inline-block border-0 bg-transparent p-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <AnimatedButton
-                  topText={isDisabled ? 'PLEASE WAIT...' : 'SEND MESSAGE'}
-                  bottomText={isDisabled ? 'PROCESSING' : 'PROCEED →'}
+                  topText={isDisabled ? 'PLEASE WAIT...' : 'OPEN EMAIL DRAFT'}
+                  bottomText={isDisabled ? 'PROCESSING' : 'REVIEW & SEND ↗'}
                   variant="primary"
                   as="span"
                   className={isDisabled ? 'pointer-events-none' : ''}
@@ -304,8 +287,9 @@ const Contact = () => {
                   type="button"
                   aria-label={`Copy ${site.email} to clipboard`}
                   onClick={() => {
-                    navigator.clipboard.writeText(site.email);
-                    setCopiedToast(true);
+                    navigator.clipboard.writeText(site.email).then(() => setCopiedToast(true)).catch(() => {
+                      window.location.href = `mailto:${site.email}`;
+                    });
                   }}
                   className="group relative inline-flex items-center justify-center cursor-pointer text-light font-display font-black uppercase leading-tight hover:text-accent transition-colors duration-300 max-w-full text-center"
                   style={{

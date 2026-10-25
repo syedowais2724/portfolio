@@ -34,40 +34,40 @@ const Services = () => {
     { t: 'DO' },
   ];
   const descriptionText =
-    "I specialize in building full-stack web applications that are fast, reliable, and user-friendly. With a solid foundation in both frontend and backend technologies, I help bring ideas to life whether it's for a business, a startup, or a product team.";
+    'I build across the product: the interface, the APIs behind it, and the voice and AI systems that connect them. These are the areas I work in.';
 
   const services = [
     {
       id: '01',
-      title: 'Full Stack Development',
+      title: 'Voice & AI Agents',
       description:
-        'End-to-end development of modern web applications, covering everything from frontend interfaces to backend APIs. I build complete, maintainable, and scalable systems using the MERN stack and modern tooling.',
+        'Voice-first experiences that connect speech, language models, and useful actions. From document-grounded assistants to browser calls and SIP telephony.',
       items: [
-        'MERN Stack (MongoDB, Express.js, React, Node.js)',
-        'REST APIs & Integration',
-        'Authentication & Authorization',
+        'Python, LiveKit, STT / TTS & SIP',
+        'RAG, vector search & knowledge graphs',
+        'Agent actions & connected messaging channels',
       ],
     },
     {
       id: '02',
-      title: 'Frontend Development',
+      title: 'Full Stack Engineering',
       description:
-        'Crafting responsive, accessible, and elegant interfaces that deliver exceptional user experiences. I focus on clarity, performance, and seamless interaction across devices.',
+        'End-to-end web products with thoughtful interfaces, reliable APIs, and clear access controls. I work across the frontend and backend rather than stopping at the screen.',
       items: [
-        'React, Next.js, TailwindCSS, GSAP',
-        'Optimized Rendering & Animations',
-        'Figma to Code Implementation',
+        'React, Next.js, TypeScript & Tailwind CSS',
+        'Node.js, Express, FastAPI & REST APIs',
+        'PostgreSQL, MongoDB, Redis, OAuth & RBAC',
       ],
     },
     {
       id: '03',
-      title: 'Optimization & Performance',
+      title: 'Mobile & Product Delivery',
       description:
-        'Optimizing codebases, APIs, and assets for speed, scalability, and maintainability. I ensure your applications run efficiently with best practices in caching, SEO, and deployment.',
+        'Taking product features beyond the browser. My work includes Flutter iOS development, authentication, call controls, and repeatable build and deployment workflows.',
       items: [
-        'Performance Tuning & Code Refactoring',
-        'SEO & Accessibility Optimization',
-        'Deployment (Vercel, AWS, Docker)',
+        'Flutter & Dart for iOS',
+        'Google sign-in, call takeover & call rules',
+        'Codemagic, Docker & AWS',
       ],
     },
   ];
@@ -88,7 +88,7 @@ const Services = () => {
           <div className="grid md:grid-cols-12 gap-4 md:gap-8">
             <div className="md:col-start-6 md:col-span-7 flex flex-col md:flex-row gap-3 md:gap-10">
               <span className="font-mono text-sm sm:text-base md:text-base text-warm uppercase tracking-[0.3em] font-medium whitespace-nowrap inline-block">
-                (Services)
+                (Expertise)
               </span>
 
               <ScrollWordReveal

@@ -9,7 +9,7 @@ import ScrollWordReveal from '@/components/ui/ScrollWordReveal';
 export interface TechItem {
   name: string;
   category: 'frontend' | 'backend' | 'database' | 'devops' | 'tools';
-  icon: string;
+  icon?: string;
   level?: string;
   description?: string;
 }
@@ -24,63 +24,197 @@ export interface StackCategory {
 
 export const STACK_SECTIONS: StackCategory[] = [
   {
-    id: 'frontend',
-    title: 'FRONTEND',
-    technologies: [
-      { name: 'JavaScript', category: 'frontend', icon: '/Services/js.png' },
-      { name: 'TypeScript', category: 'frontend', icon: '/Services/typescript.svg' },
-      { name: 'React', category: 'frontend', icon: '/Services/react.png' },
-      { name: 'Next.js', category: 'frontend', icon: '/Services/next.webp' },
-      { name: 'Redux Toolkit', category: 'frontend', icon: '/Services/reduxtoolkit.svg' },
-      { name: 'Tailwind CSS', category: 'frontend', icon: '/Services/tailwind.png' },
-      { name: 'Bootstrap', category: 'frontend', icon: '/Services/bootstrap.svg' },
-      { name: 'GSAP', category: 'frontend', icon: '/Services/gsap.png' },
-    ],
+    "id": "frontend",
+    "title": "FRONTEND & MOBILE",
+    "technologies": [
+      {
+        "name": "TypeScript",
+        "category": "frontend",
+        "icon": "/Services/typescript.svg"
+      },
+      {
+        "name": "JavaScript",
+        "category": "frontend",
+        "icon": "/Services/js.png"
+      },
+      {
+        "name": "React",
+        "category": "frontend",
+        "icon": "/Services/react.png"
+      },
+      {
+        "name": "Next.js",
+        "category": "frontend",
+        "icon": "/Services/next.webp"
+      },
+      {
+        "name": "Redux",
+        "category": "frontend",
+        "icon": "/Services/reduxtoolkit.svg"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "frontend",
+        "icon": "/Services/tailwind.png"
+      },
+      {
+        "name": "Flutter",
+        "category": "frontend"
+      },
+      {
+        "name": "Dart",
+        "category": "frontend"
+      }
+    ]
   },
   {
-    id: 'backend',
-    title: 'BACKEND & REAL-TIME',
-    technologies: [
-      { name: 'Node.js', category: 'backend', icon: '/Services/node.png' },
-      { name: 'Express.js', category: 'backend', icon: '/Services/express.png' },
-      { name: 'Socket.io', category: 'backend', icon: '/Services/socketio.svg' },
-      { name: 'Firebase', category: 'backend', icon: '/Services/firebase.svg' },
-    ],
+    "id": "backend",
+    "title": "BACKEND & REAL-TIME",
+    "technologies": [
+      {
+        "name": "Python",
+        "category": "backend"
+      },
+      {
+        "name": "Node.js",
+        "category": "backend",
+        "icon": "/Services/node.png"
+      },
+      {
+        "name": "Express",
+        "category": "backend",
+        "icon": "/Services/express.png"
+      },
+      {
+        "name": "FastAPI",
+        "category": "backend"
+      },
+      {
+        "name": "Flask",
+        "category": "backend"
+      },
+      {
+        "name": "WebSockets",
+        "category": "backend"
+      },
+      {
+        "name": "OAuth",
+        "category": "backend"
+      },
+      {
+        "name": "BullMQ",
+        "category": "backend"
+      }
+    ]
   },
   {
-    id: 'database',
-    title: 'DATABASE & ORM',
-    technologies: [
-      { name: 'MongoDB', category: 'database', icon: '/Services/mongodb.svg' },
-      { name: 'Mongoose', category: 'database', icon: '/Services/mongoose.svg' },
-      { name: 'MySQL', category: 'database', icon: '/Services/mysql.svg' },
-    ],
+    "id": "database",
+    "title": "DATABASES & SEARCH",
+    "technologies": [
+      {
+        "name": "PostgreSQL",
+        "category": "database"
+      },
+      {
+        "name": "MongoDB",
+        "category": "database",
+        "icon": "/Services/mongodb.svg"
+      },
+      {
+        "name": "MySQL",
+        "category": "database",
+        "icon": "/Services/mysql.svg"
+      },
+      {
+        "name": "Redis",
+        "category": "database"
+      },
+      {
+        "name": "Vector Search",
+        "category": "database"
+      }
+    ]
   },
   {
-    id: 'devops',
-    title: 'DEVOPS & CLOUD',
-    technologies: [
-      { name: 'Docker', category: 'devops', icon: '/Services/docker.svg' },
-      { name: 'GitHub Actions', category: 'devops', icon: '/Services/githubactions.svg' },
-      { name: 'AWS', category: 'devops', icon: '/Services/aws.webp' },
-      { name: 'Nginx', category: 'devops', icon: '/Services/nginx.svg' },
-      { name: 'Linux', category: 'devops', icon: '/Services/linux.svg' },
-    ],
+    "id": "tools",
+    "title": "VOICE & AI",
+    "technologies": [
+      {
+        "name": "LiveKit",
+        "category": "tools"
+      },
+      {
+        "name": "SIP Telephony",
+        "category": "tools"
+      },
+      {
+        "name": "LangGraph",
+        "category": "tools"
+      },
+      {
+        "name": "LangChain",
+        "category": "tools"
+      },
+      {
+        "name": "RAG",
+        "category": "tools"
+      },
+      {
+        "name": "STT / TTS",
+        "category": "tools"
+      },
+      {
+        "name": "LLMs",
+        "category": "tools"
+      },
+      {
+        "name": "ChromaDB",
+        "category": "tools"
+      }
+    ]
   },
   {
-    id: 'tools',
-    title: 'AI, TESTING & TOOLS',
-    technologies: [
-      { name: 'Gemini AI', category: 'tools', icon: '/Services/geminiai.svg' },
-      { name: 'Jest', category: 'tools', icon: '/Services/jest.svg' },
-      { name: 'Zod', category: 'tools', icon: '/Services/zod.svg' },
-      { name: 'Stripe', category: 'tools', icon: '/Services/stripe.svg' },
-      { name: 'Cloudinary', category: 'tools', icon: '/Services/cloudinary.svg' },
-      { name: 'Git', category: 'tools', icon: '/Services/git.png' },
-      { name: 'Postman', category: 'tools', icon: '/Services/postman-icon.svg' },
-      { name: 'Figma', category: 'tools', icon: '/Services/figma.png' },
-    ],
-  },
+    "id": "devops",
+    "title": "TOOLS & DELIVERY",
+    "technologies": [
+      {
+        "name": "Docker",
+        "category": "devops",
+        "icon": "/Services/docker.svg"
+      },
+      {
+        "name": "Git",
+        "category": "devops",
+        "icon": "/Services/git.png"
+      },
+      {
+        "name": "GitHub",
+        "category": "devops"
+      },
+      {
+        "name": "AWS",
+        "category": "devops",
+        "icon": "/Services/aws.webp"
+      },
+      {
+        "name": "Codemagic",
+        "category": "devops"
+      },
+      {
+        "name": "Sentry",
+        "category": "devops"
+      },
+      {
+        "name": "Postman",
+        "category": "devops",
+        "icon": "/Services/postman-icon.svg"
+      },
+      {
+        "name": "Vercel",
+        "category": "devops"
+      }
+    ]
+  }
 ];
 
 const TechStack = () => {
@@ -265,13 +399,13 @@ const TechStack = () => {
                     onMouseLeave={handleMouseLeave}
                   >
                     <div className="w-10 h-10 flex items-center justify-center relative flex-shrink-0">
-                      <Image
+                      {tech.icon ? <Image
                         src={tech.icon}
                         alt={tech.name}
                         width={40}
                         height={40}
                         className="w-full h-full object-contain"
-                      />
+                      /> : <span aria-hidden="true" className="font-mono text-sm text-accent font-bold">{tech.name.replace(/[^A-Za-z]/g, '').slice(0, 2).toUpperCase()}</span>}
                     </div>
                     <p className="text-xs sm:text-sm font-mono font-bold text-cream break-words">
                       {tech.name}

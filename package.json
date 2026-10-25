@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "syed-owais-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,22 +14,21 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
-    "@next/third-parties": "^16.2.10",
-    "@vercel/analytics": "^2.0.1",
     "gsap": "^3.13.0",
     "lenis": "^1.3.26",
     "lucide-react": "^0.548.0",
     "next": "^15.5.9",
     "next-transition-router": "^0.2.11",
-    "nodemailer": "^7.0.11",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-icons": "^5.5.0"
   },
+  "overrides": {
+    "postcss": "^8.5.31"
+  },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^22.14.0",
-    "@types/nodemailer": "^8.0.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "eslint": "^8.57.1",
