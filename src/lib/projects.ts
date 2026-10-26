@@ -8,6 +8,18 @@ export interface Project {
 
 const projects: Project[] = [
   {
+    id: 5, slug: 'launchfolio', title: 'LaunchFolio', type: 'Resume-to-Portfolio Builder', role: 'Personal project',
+    tech: ['React', 'TypeScript', 'Vite', 'PDF.js', 'IndexedDB', 'JSZip'],
+    description: 'A browser-based builder that turns resume details into an editable portfolio with live previews and downloadable websites.',
+    overview: 'LaunchFolio helps students and developers turn a resume into a portfolio without an account or paid AI service. Users import a text-based PDF, review the extracted details, add project images, and choose from three designs.',
+    architecture: 'React and TypeScript power the editor. PDF.js extracts text locally, IndexedDB saves drafts in the browser, and a shared HTML renderer keeps the preview and exported website consistent. JSZip packages a standalone site with embedded images and license notices.',
+    implementation: 'I built the resume-import and review flow, editable profile and project sections, template and accent controls, desktop and mobile previews, image uploads, JSON backups, and website ZIP export. PDF parsing supports common headings, entry bullets and date ranges; users can review and correct the result.',
+    stats: [{ value: '3 designs', label: 'Editable portfolio templates' }, { value: 'Local-first', label: 'Resume processing in the browser' }, { value: 'Standalone', label: 'Downloadable HTML website' }],
+    accent: '#8B7DE8',
+    myRole: ['Built local PDF extraction with a review step and manual editing.', 'Created a responsive editor with three portfolio designs and live previews.', 'Added portrait and project-image uploads, browser-saved drafts, and JSON backup/restore.', 'Implemented standalone website ZIP downloads with embedded images and license notices.'],
+    images: ['/work/launchfolio.png'], hoverImage: '/work/launchfolio.png', github: 'https://github.com/syedowais2724/LaunchFolio', liveUrl: '',
+  },
+  {
     id: 1, slug: 'the-double', title: 'The Double', type: 'Voice, AI Agents & Product Engineering',
     role: 'Software Engineer · Team contribution', tech: ['Next.js', 'Python', 'LiveKit', 'Flutter', 'OAuth', 'SIP'],
     description: 'Engineering across AI messaging channels, real-time voice calls, and a Flutter iOS app at The Double.',
