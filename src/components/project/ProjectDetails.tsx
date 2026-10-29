@@ -97,7 +97,7 @@ export default function ProjectDetails({ project }: { project: Project }) {
             </span>
           </h1>
 
-          {(project.liveUrl || project.github) && (
+          {project.liveUrl || project.github ? (
             <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
               {project.liveUrl && (
                 <AnimatedButton
@@ -141,6 +141,11 @@ export default function ProjectDetails({ project }: { project: Project }) {
                   className="!border !border-white/15 hover:!border-white/40"
                 />
               )}
+            </div>
+          ) : (
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-card border border-surface-border text-warm-light font-mono text-xs">
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              <span>Proprietary / Enterprise Production System</span>
             </div>
           )}
         </header>

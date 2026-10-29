@@ -45,16 +45,22 @@ const RoleTicker = () => {
 
   const nextIdx = (currentIdx + 1) % roles.length;
   return (
-    <div className="h-6 overflow-hidden mb-8 flex justify-center items-center select-none">
-      <div
-        ref={containerRef}
-        className="relative h-6 w-80 text-center font-mono text-sm uppercase tracking-widest text-accent"
-      >
-        <div className="ticker-word-current absolute inset-0 flex items-center justify-center">
-          {roles[currentIdx]}
-        </div>
-        <div className="ticker-word-next absolute inset-0 flex items-center justify-center translate-y-full">
-          {roles[nextIdx]}
+    <div className="mb-8 flex justify-center items-center select-none">
+      <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-ink text-cream border border-surface-border shadow-md">
+        <span className="flex h-2 w-2 relative">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
+        </span>
+        <div
+          ref={containerRef}
+          className="relative h-5 w-64 sm:w-72 overflow-hidden text-center font-mono text-xs sm:text-sm uppercase tracking-wider text-accent-light font-semibold"
+        >
+          <div className="ticker-word-current absolute inset-0 flex items-center justify-center">
+            {roles[currentIdx]}
+          </div>
+          <div className="ticker-word-next absolute inset-0 flex items-center justify-center translate-y-full">
+            {roles[nextIdx]}
+          </div>
         </div>
       </div>
     </div>
@@ -82,8 +88,8 @@ const StampBadge = ({ onClick }: { onClick: () => void }) => (
           </textPath>
         </text>
       </svg>
-      <span className="grid place-items-center w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-accent text-white transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-45">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <span className="grid place-items-center w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-accent text-ink transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-45 shadow-md">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M7 7l10 10M17 7v10H7" />
         </svg>
       </span>
@@ -270,6 +276,16 @@ const HomeBanner = () => {
 
       <div ref={innerContentRef} className="max-w-7xl mx-auto w-full relative z-10">
         <div className="relative text-center">
+          <div className="mb-4 sm:mb-6 inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#111A16]/5 border border-[#111A16]/10 font-mono text-[11px] uppercase tracking-widest text-warm select-none">
+            <span className="flex items-end gap-[2px] h-3" aria-hidden="true">
+              <span className="w-[2.5px] h-2 bg-emerald-700 animate-pulse" />
+              <span className="w-[2.5px] h-3.5 bg-emerald-700 animate-pulse delay-75" />
+              <span className="w-[2.5px] h-1.5 bg-emerald-700 animate-pulse delay-150" />
+              <span className="w-[2.5px] h-2.5 bg-emerald-700 animate-pulse delay-100" />
+            </span>
+            <span className="font-semibold text-charcoal">VOICE SYSTEMS · AI AGENTS · FULL STACK</span>
+          </div>
+
           <h1
             ref={nameRef}
             aria-label={site.name}

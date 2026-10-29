@@ -87,7 +87,7 @@ const Services = () => {
 
           <div className="grid md:grid-cols-12 gap-4 md:gap-8">
             <div className="md:col-start-6 md:col-span-7 flex flex-col md:flex-row gap-3 md:gap-10">
-              <span className="font-mono text-sm sm:text-base md:text-base text-warm uppercase tracking-[0.3em] font-medium whitespace-nowrap inline-block">
+              <span className="font-mono text-sm sm:text-base md:text-base text-accent uppercase tracking-[0.3em] font-semibold whitespace-nowrap inline-block">
                 (Expertise)
               </span>
 
@@ -107,37 +107,49 @@ const Services = () => {
               ref={(el) => {
                 servicesRef.current[index] = el;
               }}
-              className="bg-ink pb-12 md:pb-20"
+              className="pb-8 md:pb-16"
               style={{ zIndex: index + 1 }}
             >
-              <div className="grid md:grid-cols-12 gap-4 items-center py-4 md:py-8 border-t border-border-subtle">
-                <h3
-                  className="font-display md:col-span-9 md:col-start-2 text-light font-bold text-2xl sm:text-2xl md:text-4xl lg:text-5xl leading-none"
-                  style={{ transform: 'translateY(-0.1em)' }}
-                >
-                  {service.title}
-                </h3>
-              </div>
+              <div className="rounded-3xl bg-[#0F1613] border border-white/10 p-6 sm:p-8 md:p-12 shadow-[0_-12px_36px_rgba(0,0,0,0.55)] transition-all duration-300 hover:border-accent/40">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
+                  <div className="flex items-center gap-3.5">
+                    <span className="font-mono text-xs text-accent uppercase tracking-widest px-3 py-1 rounded-full bg-accent/10 border border-accent/25">
+                      Domain 0{index + 1}
+                    </span>
+                    <h3 className="font-display text-light font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-none">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <span className="font-mono text-xs text-gray-soft uppercase tracking-widest hidden md:inline-block">
+                    [ 0{index + 1} / 0{services.length} ]
+                  </span>
+                </div>
 
-              <div className="grid md:grid-cols-12 gap-4 md:gap-8 pt-4 md:pt-6">
-                <div className="md:col-span-7 md:col-start-6 space-y-4 md:space-y-6">
-                  <ScrollWordReveal
-                    text={service.description}
-                    offset={['start 0.95', 'end 0.7']}
-                    className="text-gray-soft text-base sm:text-base md:text-lg leading-relaxed font-sans"
-                  />
+                <div className="grid md:grid-cols-12 gap-6 md:gap-8 pt-6 md:pt-8">
+                  <div className="md:col-span-5">
+                    <ScrollWordReveal
+                      text={service.description}
+                      offset={['start 0.95', 'end 0.7']}
+                      className="text-gray-soft text-base sm:text-base md:text-lg leading-relaxed font-sans"
+                    />
+                  </div>
 
-                  <div className="divide-y divide-border-subtle">
-                    {service.items.map((item, i) => (
-                      <div key={i} className="py-3 flex items-center gap-3 md:gap-4">
-                        <span className="text-accent-light text-xs md:text-sm font-mono font-bold">
-                          0{i + 1}
-                        </span>
-                        <span className="text-base sm:text-base md:text-lg font-bold font-sans text-light">
-                          {item}
-                        </span>
-                      </div>
-                    ))}
+                  <div className="md:col-span-7 space-y-3">
+                    <span className="font-mono text-xs text-accent uppercase tracking-wider block mb-2 font-semibold">
+                      Core Specializations
+                    </span>
+                    <div className="divide-y divide-white/10">
+                      {service.items.map((item, i) => (
+                        <div key={i} className="py-3.5 flex items-center gap-3.5 group">
+                          <span className="w-6 h-6 rounded-full bg-accent/10 text-accent text-xs font-mono font-bold flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:text-ink transition-colors duration-200">
+                            0{i + 1}
+                          </span>
+                          <span className="text-base sm:text-base md:text-lg font-medium font-sans text-cream group-hover:text-accent-light transition-colors duration-200">
+                            {item}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

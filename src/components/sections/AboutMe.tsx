@@ -262,7 +262,7 @@ const About = () => {
             </div>
 
             <div className="col-span-12 md:col-span-7 lg:col-span-6 md:col-start-6 lg:col-start-7 flex flex-col justify-center space-y-8">
-              <span className="about-label font-mono text-sm sm:text-base md:text-base text-warm uppercase tracking-[0.3em] font-medium text-center md:text-left inline-block">
+              <span className="about-label font-mono text-sm sm:text-base md:text-base text-accent uppercase tracking-[0.3em] font-semibold text-center md:text-left inline-block">
                 (About Me)
               </span>
               <div className="space-y-6">
@@ -280,7 +280,7 @@ const About = () => {
 
           <div ref={tableRef} className="pt-12 md:pt-20 border-t border-white/10">
             <div className="mb-12 text-center md:mb-20">
-              <span className="cred-section-label font-mono text-sm sm:text-base md:text-base text-warm uppercase tracking-[0.3em] font-medium inline-block opacity-0">
+              <span className="cred-section-label font-mono text-sm sm:text-base md:text-base text-accent uppercase tracking-[0.3em] font-semibold inline-block opacity-0">
                 (Experience)
               </span>
               <h3 className="mt-5 font-display text-[clamp(2.5rem,7vw,6.5rem)] font-black uppercase tracking-tight leading-none text-light">

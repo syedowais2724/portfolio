@@ -21,6 +21,12 @@ const Contact = () => {
     { t: 'talk', serif: true },
   ];
 
+  const QUICK_TOPICS = [
+    { label: '💼 Opportunity', text: "Hi Syed, I came across your portfolio and would like to discuss an engineering role with our team..." },
+    { label: '🎙️ Voice AI Project', text: "Hi Syed, I'd like to consult on a real-time voice system / LiveKit agent architecture..." },
+    { label: '☕ Say Hello', text: "Hi Syed, reaching out to connect about your work in voice systems and AI agents!" },
+  ];
+
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -218,9 +224,27 @@ const Contact = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label htmlFor="message" className="font-medium text-sm sm:text-base text-muted">
-                Message <span className="text-red-400">*</span>
-              </label>
+              <div className="flex items-center justify-between">
+                <label htmlFor="message" className="font-medium text-sm sm:text-base text-muted">
+                  Message <span className="text-red-400">*</span>
+                </label>
+                <span className="text-xs font-mono text-warm-light">Quick Prompts:</span>
+              </div>
+              <div className="flex flex-wrap gap-1.5 mb-1">
+                {QUICK_TOPICS.map((topic) => (
+                  <button
+                    key={topic.label}
+                    type="button"
+                    onClick={() => {
+                      setFormData((prev) => ({ ...prev, message: topic.text }));
+                      if (errors.message) setErrors((prev) => ({ ...prev, message: '' }));
+                    }}
+                    className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-surface border border-white/10 text-gray-soft hover:text-cream hover:border-accent/40 transition-colors cursor-pointer"
+                  >
+                    {topic.label}
+                  </button>
+                ))}
+              </div>
               <textarea
                 id="message"
                 name="message"
@@ -259,11 +283,11 @@ const Contact = () => {
               )}
             </div>
 
-            <div className="w-full flex justify-center md:justify-start">
+            <div className="w-full flex flex-col sm:flex-row items-center gap-4 justify-between pt-2">
               <button
                 type="submit"
                 disabled={isDisabled}
-                className="inline-block border-0 bg-transparent p-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                className="inline-block border-0 bg-transparent p-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
               >
                 <AnimatedButton
                   topText={isDisabled ? 'PLEASE WAIT...' : 'OPEN EMAIL DRAFT'}
@@ -272,6 +296,19 @@ const Contact = () => {
                   as="span"
                   className={isDisabled ? 'pointer-events-none' : ''}
                 />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  navigator.clipboard.writeText(site.email).then(() => setCopiedToast(true)).catch(() => {
+                    window.location.href = `mailto:${site.email}`;
+                  });
+                }}
+                className="text-xs font-mono uppercase tracking-wider text-warm-light hover:text-accent transition-colors py-2 px-3.5 rounded-lg border border-white/10 hover:border-accent/30 flex items-center gap-2 cursor-pointer"
+              >
+                <span>Copy: {site.email}</span>
+                <span className="text-accent">📋</span>
               </button>
             </div>
           </form>

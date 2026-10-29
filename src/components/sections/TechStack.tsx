@@ -5,6 +5,46 @@ import Image from 'next/image';
 import { gsap, useGSAP } from '@/lib/gsap';
 import AnimatedHeading from '@/components/ui/AnimateHeading';
 import ScrollWordReveal from '@/components/ui/ScrollWordReveal';
+import {
+  SiTypescript,
+  SiJavascript,
+  SiReact,
+  SiNextdotjs,
+  SiRedux,
+  SiTailwindcss,
+  SiFlutter,
+  SiDart,
+  SiPython,
+  SiNodedotjs,
+  SiExpress,
+  SiFastapi,
+  SiFlask,
+  SiPostgresql,
+  SiMongodb,
+  SiMysql,
+  SiRedis,
+  SiDocker,
+  SiGit,
+  SiGithub,
+  SiAmazonwebservices,
+  SiCodemagic,
+  SiSentry,
+  SiPostman,
+  SiVercel,
+} from 'react-icons/si';
+import {
+  Network,
+  KeyRound,
+  Workflow,
+  Database,
+  AudioLines,
+  PhoneCall,
+  BrainCircuit,
+  Cpu,
+  AudioWaveform,
+  Bot,
+  Layers,
+} from 'lucide-react';
 
 export interface TechItem {
   name: string;
@@ -24,198 +64,165 @@ export interface StackCategory {
 
 export const STACK_SECTIONS: StackCategory[] = [
   {
-    "id": "frontend",
-    "title": "FRONTEND & MOBILE",
-    "technologies": [
-      {
-        "name": "TypeScript",
-        "category": "frontend",
-        "icon": "/Services/typescript.svg"
-      },
-      {
-        "name": "JavaScript",
-        "category": "frontend",
-        "icon": "/Services/js.png"
-      },
-      {
-        "name": "React",
-        "category": "frontend",
-        "icon": "/Services/react.png"
-      },
-      {
-        "name": "Next.js",
-        "category": "frontend",
-        "icon": "/Services/next.webp"
-      },
-      {
-        "name": "Redux",
-        "category": "frontend",
-        "icon": "/Services/reduxtoolkit.svg"
-      },
-      {
-        "name": "Tailwind CSS",
-        "category": "frontend",
-        "icon": "/Services/tailwind.png"
-      },
-      {
-        "name": "Flutter",
-        "category": "frontend"
-      },
-      {
-        "name": "Dart",
-        "category": "frontend"
-      }
-    ]
+    id: 'frontend',
+    title: 'FRONTEND & MOBILE',
+    technologies: [
+      { name: 'TypeScript', category: 'frontend', icon: '/Services/typescript.svg' },
+      { name: 'JavaScript', category: 'frontend', icon: '/Services/js.png' },
+      { name: 'React', category: 'frontend', icon: '/Services/react.png' },
+      { name: 'Next.js', category: 'frontend', icon: '/Services/next.webp' },
+      { name: 'Redux', category: 'frontend', icon: '/Services/reduxtoolkit.svg' },
+      { name: 'Tailwind CSS', category: 'frontend', icon: '/Services/tailwind.png' },
+      { name: 'Flutter', category: 'frontend' },
+      { name: 'Dart', category: 'frontend' },
+    ],
   },
   {
-    "id": "backend",
-    "title": "BACKEND & REAL-TIME",
-    "technologies": [
-      {
-        "name": "Python",
-        "category": "backend"
-      },
-      {
-        "name": "Node.js",
-        "category": "backend",
-        "icon": "/Services/node.png"
-      },
-      {
-        "name": "Express",
-        "category": "backend",
-        "icon": "/Services/express.png"
-      },
-      {
-        "name": "FastAPI",
-        "category": "backend"
-      },
-      {
-        "name": "Flask",
-        "category": "backend"
-      },
-      {
-        "name": "WebSockets",
-        "category": "backend"
-      },
-      {
-        "name": "OAuth",
-        "category": "backend"
-      },
-      {
-        "name": "BullMQ",
-        "category": "backend"
-      }
-    ]
+    id: 'backend',
+    title: 'BACKEND & REAL-TIME',
+    technologies: [
+      { name: 'Python', category: 'backend' },
+      { name: 'Node.js', category: 'backend', icon: '/Services/node.png' },
+      { name: 'Express', category: 'backend', icon: '/Services/express.png' },
+      { name: 'FastAPI', category: 'backend' },
+      { name: 'Flask', category: 'backend' },
+      { name: 'WebSockets', category: 'backend' },
+      { name: 'OAuth', category: 'backend' },
+      { name: 'BullMQ', category: 'backend' },
+    ],
   },
   {
-    "id": "database",
-    "title": "DATABASES & SEARCH",
-    "technologies": [
-      {
-        "name": "PostgreSQL",
-        "category": "database"
-      },
-      {
-        "name": "MongoDB",
-        "category": "database",
-        "icon": "/Services/mongodb.svg"
-      },
-      {
-        "name": "MySQL",
-        "category": "database",
-        "icon": "/Services/mysql.svg"
-      },
-      {
-        "name": "Redis",
-        "category": "database"
-      },
-      {
-        "name": "Vector Search",
-        "category": "database"
-      }
-    ]
+    id: 'database',
+    title: 'DATABASES & SEARCH',
+    technologies: [
+      { name: 'PostgreSQL', category: 'database' },
+      { name: 'MongoDB', category: 'database', icon: '/Services/mongodb.svg' },
+      { name: 'MySQL', category: 'database', icon: '/Services/mysql.svg' },
+      { name: 'Redis', category: 'database' },
+      { name: 'Vector Search', category: 'database' },
+    ],
   },
   {
-    "id": "tools",
-    "title": "VOICE & AI",
-    "technologies": [
-      {
-        "name": "LiveKit",
-        "category": "tools"
-      },
-      {
-        "name": "SIP Telephony",
-        "category": "tools"
-      },
-      {
-        "name": "LangGraph",
-        "category": "tools"
-      },
-      {
-        "name": "LangChain",
-        "category": "tools"
-      },
-      {
-        "name": "RAG",
-        "category": "tools"
-      },
-      {
-        "name": "STT / TTS",
-        "category": "tools"
-      },
-      {
-        "name": "LLMs",
-        "category": "tools"
-      },
-      {
-        "name": "ChromaDB",
-        "category": "tools"
-      }
-    ]
+    id: 'tools',
+    title: 'VOICE & AI SYSTEMS',
+    technologies: [
+      { name: 'LiveKit', category: 'tools' },
+      { name: 'SIP Telephony', category: 'tools' },
+      { name: 'LangGraph', category: 'tools' },
+      { name: 'LangChain', category: 'tools' },
+      { name: 'RAG', category: 'tools' },
+      { name: 'STT / TTS', category: 'tools' },
+      { name: 'LLMs', category: 'tools' },
+      { name: 'ChromaDB', category: 'tools' },
+    ],
   },
   {
-    "id": "devops",
-    "title": "TOOLS & DELIVERY",
-    "technologies": [
-      {
-        "name": "Docker",
-        "category": "devops",
-        "icon": "/Services/docker.svg"
-      },
-      {
-        "name": "Git",
-        "category": "devops",
-        "icon": "/Services/git.png"
-      },
-      {
-        "name": "GitHub",
-        "category": "devops"
-      },
-      {
-        "name": "AWS",
-        "category": "devops",
-        "icon": "/Services/aws.webp"
-      },
-      {
-        "name": "Codemagic",
-        "category": "devops"
-      },
-      {
-        "name": "Sentry",
-        "category": "devops"
-      },
-      {
-        "name": "Postman",
-        "category": "devops",
-        "icon": "/Services/postman-icon.svg"
-      },
-      {
-        "name": "Vercel",
-        "category": "devops"
-      }
-    ]
-  }
+    id: 'devops',
+    title: 'TOOLS & DELIVERY',
+    technologies: [
+      { name: 'Docker', category: 'devops', icon: '/Services/docker.svg' },
+      { name: 'Git', category: 'devops', icon: '/Services/git.png' },
+      { name: 'GitHub', category: 'devops' },
+      { name: 'AWS', category: 'devops', icon: '/Services/aws.webp' },
+      { name: 'Codemagic', category: 'devops' },
+      { name: 'Sentry', category: 'devops' },
+      { name: 'Postman', category: 'devops', icon: '/Services/postman-icon.svg' },
+      { name: 'Vercel', category: 'devops' },
+    ],
+  },
 ];
+
+const renderTechIcon = (name: string, fallbackImg?: string) => {
+  switch (name) {
+    case 'TypeScript':
+      return <SiTypescript className="w-5 h-5 text-[#3178C6]" />;
+    case 'JavaScript':
+      return <SiJavascript className="w-5 h-5 text-[#F7DF1E]" />;
+    case 'React':
+      return <SiReact className="w-5 h-5 text-[#61DAFB]" />;
+    case 'Next.js':
+      return <SiNextdotjs className="w-5 h-5 text-white" />;
+    case 'Redux':
+      return <SiRedux className="w-5 h-5 text-[#764ABC]" />;
+    case 'Tailwind CSS':
+      return <SiTailwindcss className="w-5 h-5 text-[#06B6D4]" />;
+    case 'Flutter':
+      return <SiFlutter className="w-5 h-5 text-[#02569B]" />;
+    case 'Dart':
+      return <SiDart className="w-5 h-5 text-[#0175C2]" />;
+    case 'Python':
+      return <SiPython className="w-5 h-5 text-[#3776AB]" />;
+    case 'Node.js':
+      return <SiNodedotjs className="w-5 h-5 text-[#5FA04E]" />;
+    case 'Express':
+      return <SiExpress className="w-5 h-5 text-white" />;
+    case 'FastAPI':
+      return <SiFastapi className="w-5 h-5 text-[#009688]" />;
+    case 'Flask':
+      return <SiFlask className="w-5 h-5 text-white" />;
+    case 'WebSockets':
+      return <Network className="w-5 h-5 text-accent-light" />;
+    case 'OAuth':
+      return <KeyRound className="w-5 h-5 text-[#F59E0B]" />;
+    case 'BullMQ':
+      return <Workflow className="w-5 h-5 text-[#EC4899]" />;
+    case 'PostgreSQL':
+      return <SiPostgresql className="w-5 h-5 text-[#4169E1]" />;
+    case 'MongoDB':
+      return <SiMongodb className="w-5 h-5 text-[#47A248]" />;
+    case 'MySQL':
+      return <SiMysql className="w-5 h-5 text-[#4479A1]" />;
+    case 'Redis':
+      return <SiRedis className="w-5 h-5 text-[#DC382D]" />;
+    case 'Vector Search':
+      return <Database className="w-5 h-5 text-accent-light" />;
+    case 'LiveKit':
+      return <AudioLines className="w-5 h-5 text-accent-light" />;
+    case 'SIP Telephony':
+      return <PhoneCall className="w-5 h-5 text-accent" />;
+    case 'LangGraph':
+      return <Workflow className="w-5 h-5 text-[#A78BFA]" />;
+    case 'LangChain':
+      return <BrainCircuit className="w-5 h-5 text-[#34D399]" />;
+    case 'RAG':
+      return <Cpu className="w-5 h-5 text-accent-light" />;
+    case 'STT / TTS':
+      return <AudioWaveform className="w-5 h-5 text-[#6EE7B7]" />;
+    case 'LLMs':
+      return <Bot className="w-5 h-5 text-[#38BDF8]" />;
+    case 'ChromaDB':
+      return <Database className="w-5 h-5 text-[#FB7185]" />;
+    case 'Docker':
+      return <SiDocker className="w-5 h-5 text-[#2496ED]" />;
+    case 'Git':
+      return <SiGit className="w-5 h-5 text-[#F05032]" />;
+    case 'GitHub':
+      return <SiGithub className="w-5 h-5 text-white" />;
+    case 'AWS':
+      return <SiAmazonwebservices className="w-5 h-5 text-[#FF9900]" />;
+    case 'Codemagic':
+      return <SiCodemagic className="w-5 h-5 text-[#F87171]" />;
+    case 'Sentry':
+      return <SiSentry className="w-5 h-5 text-[#9333EA]" />;
+    case 'Postman':
+      return <SiPostman className="w-5 h-5 text-[#FF6C37]" />;
+    case 'Vercel':
+      return <SiVercel className="w-5 h-5 text-white" />;
+    default:
+      if (fallbackImg) {
+        return (
+          <Image
+            src={fallbackImg}
+            alt={name}
+            width={24}
+            height={24}
+            className="w-5 h-5 object-contain"
+          />
+        );
+      }
+      return <Layers className="w-5 h-5 text-accent" />;
+  }
+};
 
 const TechStack = () => {
   const [activeFilter, setActiveFilter] = useState<string>('all');
@@ -229,15 +236,15 @@ const TechStack = () => {
     { t: 'stack', serif: true },
   ];
   const descriptionText =
-    'A selection of technologies I use to design, build, and deploy full-stack web applications.';
+    'A curated selection of technologies and protocols I build with across voice, AI agents, full-stack, and mobile.';
 
   const filterOptions = [
-    { id: 'all', label: 'All Categories' },
-    { id: 'frontend', label: 'Frontend' },
+    { id: 'all', label: 'All Technologies' },
+    { id: 'tools', label: 'Voice & AI Systems' },
+    { id: 'frontend', label: 'Frontend & Mobile' },
     { id: 'backend', label: 'Backend & Real-Time' },
-    { id: 'database', label: 'Database & ORM' },
+    { id: 'database', label: 'Databases & Search' },
     { id: 'devops', label: 'DevOps & Cloud' },
-    { id: 'tools', label: 'AI, Testing & Tools' },
   ];
 
   const visibleSections =
@@ -278,8 +285,8 @@ const TechStack = () => {
             {
               opacity: 1,
               y: 0,
-              stagger: 0.05,
-              duration: 0.6,
+              stagger: 0.04,
+              duration: 0.55,
               ease: 'power2.out',
               scrollTrigger: {
                 trigger: section,
@@ -303,9 +310,9 @@ const TechStack = () => {
     ) {
       return;
     }
-    const img = e.currentTarget.querySelector('img');
-    if (!img) return;
-    gsap.to(img, { rotation: 360, scale: 1.1, duration: 0.6, ease: 'power2.out' });
+    const icon = e.currentTarget.querySelector('.tech-icon-wrap');
+    if (!icon) return;
+    gsap.to(icon, { y: -3, scale: 1.15, duration: 0.3, ease: 'power2.out' });
   };
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -316,16 +323,16 @@ const TechStack = () => {
     ) {
       return;
     }
-    const img = e.currentTarget.querySelector('img');
-    if (!img) return;
-    gsap.to(img, { rotation: 0, scale: 1, duration: 0.5, ease: 'power2.inOut' });
+    const icon = e.currentTarget.querySelector('.tech-icon-wrap');
+    if (!icon) return;
+    gsap.to(icon, { y: 0, scale: 1, duration: 0.3, ease: 'power2.out' });
   };
 
   return (
     <section
       ref={containerRef}
       id="tech-stack"
-      className="bg-ink text-light pt-24 pb-16 md:pt-32 md:pb-20 rounded-b-4xl overflow-hidden"
+      className="bg-ink text-light pt-24 pb-16 md:pt-32 md:pb-24 rounded-b-4xl overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
         <div className="mb-10 md:mb-14 hidden md:block">
@@ -355,10 +362,10 @@ const TechStack = () => {
                 key={option.id}
                 type="button"
                 onClick={() => setActiveFilter(option.id)}
-                className={`text-xs sm:text-sm font-mono tracking-wider px-3.5 py-1.5 rounded-full border transition-all duration-300 cursor-pointer ${
+                className={`text-xs sm:text-sm font-mono tracking-wider px-4 py-2 rounded-full border transition-all duration-300 cursor-pointer ${
                   isActive
-                    ? 'bg-cream text-ink border-cream font-semibold shadow-md'
-                    : 'bg-elevated-dark/60 text-gray-soft border-white/10 hover:border-accent/40 hover:text-cream'
+                    ? 'bg-cream text-ink border-cream font-bold shadow-md scale-105'
+                    : 'bg-elevated-dark/70 text-gray-soft border-white/10 hover:border-accent/40 hover:text-cream'
                 }`}
               >
                 {option.label}
@@ -385,7 +392,7 @@ const TechStack = () => {
                 >
                   {stack.title}
                 </h3>
-                <span className="font-mono text-xs text-warm tracking-widest uppercase block mt-2">
+                <span className="font-mono text-xs text-warm-light tracking-widest uppercase block mt-2">
                   {stack.technologies.length} Technologies
                 </span>
               </div>
@@ -394,20 +401,14 @@ const TechStack = () => {
                 {stack.technologies.map((tech, i) => (
                   <div
                     key={i}
-                    className="tech-item flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-all duration-300 hover:bg-elevated-dark/60 border border-white/[0.04] hover:border-accent/30 bg-surface/50"
+                    className="tech-item group flex items-center gap-3.5 p-3 rounded-xl cursor-pointer transition-all duration-300 bg-[#0F1613] border border-white/[0.06] hover:border-accent/40 hover:bg-[#141D19] hover:shadow-[0_4px_24px_rgba(52,211,153,0.12)]"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <div className="w-10 h-10 flex items-center justify-center relative flex-shrink-0">
-                      {tech.icon ? <Image
-                        src={tech.icon}
-                        alt={tech.name}
-                        width={40}
-                        height={40}
-                        className="w-full h-full object-contain"
-                      /> : <span aria-hidden="true" className="font-mono text-sm text-accent font-bold">{tech.name.replace(/[^A-Za-z]/g, '').slice(0, 2).toUpperCase()}</span>}
+                    <div className="tech-icon-wrap w-10 h-10 rounded-lg bg-[#070A09] flex items-center justify-center relative flex-shrink-0 border border-white/[0.06] group-hover:border-accent/30 transition-colors">
+                      {renderTechIcon(tech.name, tech.icon)}
                     </div>
-                    <p className="text-xs sm:text-sm font-mono font-bold text-cream break-words">
+                    <p className="text-xs sm:text-sm font-mono font-semibold text-cream group-hover:text-accent-light transition-colors duration-200 break-words">
                       {tech.name}
                     </p>
                   </div>

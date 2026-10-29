@@ -572,17 +572,11 @@ const Navbar: React.FC<NavbarProps> = ({ hamburgerOnly = false }) => {
     if (isMobile) {
       gsap.set(hamburger, { opacity: 1, scale: 1 });
     } else {
-      const aboutWrapper = document.getElementById('about-section-wrapper');
-      if (aboutWrapper) {
-        const aboutTop = aboutWrapper.getBoundingClientRect().top + scrollY;
-        const shouldShowHamburger = scrollY >= aboutTop;
-        gsap.set(hamburger, {
-          opacity: shouldShowHamburger ? 1 : 0,
-          scale: shouldShowHamburger ? 1 : 0,
-        });
-      } else {
-        gsap.set(hamburger, { opacity: 0, scale: 0 });
-      }
+      const shouldShowHamburger = scrollY >= 90;
+      gsap.set(hamburger, {
+        opacity: shouldShowHamburger ? 1 : 0,
+        scale: shouldShowHamburger ? 1 : 0,
+      });
     }
   }, [hamburgerOnly]);
 
@@ -609,28 +603,26 @@ const Navbar: React.FC<NavbarProps> = ({ hamburgerOnly = false }) => {
       },
     });
 
-    const aboutWrapper = document.getElementById('about-section-wrapper');
-    let aboutTrigger: ScrollTrigger | null = null;
+    let navTrigger: ScrollTrigger | null = null;
 
-    if (aboutWrapper && !isMobile) {
-      aboutTrigger = ScrollTrigger.create({
-        trigger: aboutWrapper,
-        start: 'top top',
-        end: 'top -200px',
+    if (!isMobile) {
+      navTrigger = ScrollTrigger.create({
+        trigger: 'body',
+        start: 'top -90px',
         onEnter: () => {
-          gsap.to(hamburger, { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)' });
+          gsap.to(hamburger, { opacity: 1, scale: 1, duration: 0.4, ease: 'back.out(1.7)' });
         },
         onLeaveBack: () => {
-          gsap.to(hamburger, { opacity: 0, scale: 0, duration: 0.3, ease: 'power2.in' });
+          gsap.to(hamburger, { opacity: 0, scale: 0, duration: 0.25, ease: 'power2.in' });
         },
       });
-    } else if (isMobile) {
+    } else {
       gsap.set(hamburger, { opacity: 1, scale: 1 });
     }
 
     return () => {
       scrollTrigger.kill();
-      if (aboutTrigger) aboutTrigger.kill();
+      if (navTrigger) navTrigger.kill();
     };
   }, [hasAnimated, hamburgerOnly, isTransitioning]);
 

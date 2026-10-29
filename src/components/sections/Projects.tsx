@@ -351,11 +351,16 @@ function MobileSnapProjects({ projects, router }: MobileSnapProjectsProps) {
                 </span>
               </div>
 
-              <div className="flex flex-wrap gap-1.5 mb-3">
+              <div className="flex flex-wrap gap-1.5 mb-2.5">
+                <span
+                  className="font-mono uppercase tracking-wider text-[10px] text-accent font-semibold px-2.5 py-0.5 rounded-full bg-accent/10 border border-accent/20"
+                >
+                  {project.type}
+                </span>
                 {project.tech.slice(0, 3).map((t) => (
                   <span
                     key={t}
-                    className="mc-tag font-mono uppercase tracking-widest px-2.5 py-1 rounded-full"
+                    className="mc-tag font-mono uppercase tracking-widest px-2.5 py-0.5 rounded-full"
                     style={{
                       fontSize: 9,
                       background: 'rgba(255,255,255,0.08)',
@@ -369,11 +374,15 @@ function MobileSnapProjects({ projects, router }: MobileSnapProjectsProps) {
               </div>
 
               <h3
-                className="mc-title font-black uppercase leading-tight text-white mb-4"
+                className="mc-title font-black uppercase leading-tight text-white mb-2"
                 style={{ fontSize: 'clamp(1.3rem, 5.5vw, 2rem)', letterSpacing: '-0.025em' }}
               >
                 {project.title}
               </h3>
+
+              <p className="text-xs text-gray-soft font-sans line-clamp-2 mb-3">
+                {project.description}
+              </p>
 
               <div className="mc-cta" style={{ opacity: 0 }}>
                 <div className="h-px w-full mb-4" style={{ background: 'rgba(255,255,255,0.07)' }} />
@@ -620,6 +629,12 @@ export default function ProjectsPage() {
               </div>
 
               <div className="flex-1 pr-8">
+                <div className="flex items-center gap-2.5 mb-1.5">
+                  <span className="font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-charcoal/5 border border-border text-warm font-medium">
+                    {project.type}
+                  </span>
+                </div>
+
                 <h3 className="relative text-[clamp(2rem,4vw,3.5rem)] font-extrabold uppercase leading-none tracking-tight overflow-hidden">
                   <span className="block text-charcoal select-none">{project.title}</span>
                   <span
@@ -633,19 +648,33 @@ export default function ProjectsPage() {
                   </span>
                 </h3>
 
-                <div className="mt-3 flex flex-wrap gap-2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out">
-                  {project.tech.map((t) => (
-                    <span key={t} className="px-3 py-1 rounded-full bg-transparent border border-gray-300 text-warm text-xs font-medium">
+                <p className="text-sm font-sans text-warm mt-2 line-clamp-1 max-w-2xl">
+                  {project.description}
+                </p>
+
+                <div className="mt-3.5 flex flex-wrap gap-2">
+                  {project.tech.map((t, tidx) => (
+                    <span
+                      key={t}
+                      className={`px-3 py-1 rounded-full text-xs font-mono transition-all duration-300 ${
+                        tidx < 3
+                          ? 'border border-border text-warm bg-charcoal/[0.03] group-hover:border-accent/40 group-hover:text-charcoal group-hover:bg-accent/10'
+                          : 'opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 border border-border/80 text-warm'
+                      }`}
+                    >
                       {t}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <div className="flex-[0_0_200px] text-right flex flex-col justify-end items-end pb-2">
-                <span className="font-mono text-xs uppercase tracking-widest text-charcoal group-hover:text-accent transition-colors duration-250 flex items-center gap-1">
+              <div className="flex-[0_0_220px] text-right flex flex-col justify-between items-end py-1">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-warm-light">
+                  {project.role}
+                </span>
+                <span className="font-mono text-xs uppercase tracking-widest text-charcoal group-hover:text-accent font-semibold transition-colors duration-250 flex items-center gap-1.5">
                   <span>View Project</span>
-                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1.5">
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1.5 text-accent font-bold">
                     →
                   </span>
                 </span>
