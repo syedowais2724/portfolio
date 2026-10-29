@@ -213,6 +213,15 @@ body {
   body.custom-cursor-active * {
     cursor: none !important;
   }
+
+  body.custom-cursor-active [data-cardtree-widget],
+  body.custom-cursor-active [id*="cardtree"],
+  body.custom-cursor-active [class*="cardtree"],
+  body.custom-cursor-active iframe[src*="thedouble"],
+  body.custom-cursor-active [id*="cardtree"] *,
+  body.custom-cursor-active [class*="cardtree"] * {
+    cursor: auto !important;
+  }
 }
 
 body.cursor-disabled,

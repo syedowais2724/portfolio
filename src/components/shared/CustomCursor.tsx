@@ -107,6 +107,18 @@ export default function CustomCursor() {
     };
 
     const handleMouseOver = (e: MouseEvent) => {
+      const isWidget = !!(e.target as HTMLElement | null)?.closest(
+        '[data-cardtree-widget], [id*="cardtree"], [class*="cardtree"], iframe'
+      );
+      if (isWidget) {
+        if (cursorDot && cursorOutline && cursorTextEl) {
+          gsap.to([cursorDot, cursorOutline, cursorTextEl], { opacity: 0, duration: 0.2 });
+        }
+        return;
+      } else if (cursorDot && cursorOutline) {
+        gsap.to([cursorDot, cursorOutline], { opacity: 1, duration: 0.2 });
+      }
+
       const target = (e.target as HTMLElement | null)?.closest<HTMLElement>(
         'a, button, [data-cursor], [role="button"]'
       );

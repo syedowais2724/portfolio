@@ -349,7 +349,7 @@ const Contact = () => {
       <div
         role="status"
         aria-live="polite"
-        className={`fixed bottom-8 right-8 z-[9998] pointer-events-none transition-all duration-300 ${
+        className={`fixed bottom-8 left-8 z-[9998] pointer-events-none transition-all duration-300 shadow-xl ${
           copiedToast ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
         }`}
         style={{
